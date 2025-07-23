@@ -8,7 +8,7 @@ import ForgotPassword from './pages/ForgotPassword'
 function App() {
   return (
     <>
-    <div className='bg-gray-500/40 dark dark:bg-black/90 '>
+    <div className='dark'>
        <BrowserRouter>
           <Routes>
              <Route path='/' element={<Homepage/>} />
