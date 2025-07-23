@@ -6,6 +6,7 @@ import FormBtmCompo from "../components/FormBtmCompo";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import LinkCompo from "../components/LinkCompo";
 
 function Signin() {
   
@@ -38,6 +39,7 @@ function Signin() {
                             }
                      </div>
                   </div>
+                  <LinkCompo label={"Forgot Password ? "} to={"/forgotpassword"} />
                 </div>
                 
             </div>
