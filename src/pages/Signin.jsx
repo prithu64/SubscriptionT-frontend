@@ -1,9 +1,16 @@
 import FormHeaderLable from "../components/FormHeaderLable";
-import BtnCompo from "../components/FormBtnCompo"
-import InputCompo from "../components/InputCompo"
-import SemiHeader from "../components/FormSemiHeader"
+import FormBtnCompo from "../components/FormBtnCompo"
+import FormInputCompo from "../components/FormInputCompo"
+import FormSemiHeader from "../components/FormSemiHeader"
+import FormBtmCompo from "../components/FormBtmCompo";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 function Signin() {
+  
+  const [passwordType,setPasswordType] = useState("password");
+
   return (
        <div className="dark:bg-black/90 h-screen flex justify-center items-center">
         <div>
@@ -12,14 +19,31 @@ function Signin() {
                <FormHeaderLable label={"Sign In"} />
             </div>
             <div>
-                <SemiHeader  label={"username"}/>
-                <InputCompo  placeholder={"username"} type={"text"}/>
+                <FormSemiHeader  label={"username"}/>
+                <FormInputCompo  placeholder={"username"} type={"text"}/>
 
-                <SemiHeader  label={"password"}/>
-                <InputCompo  placeholder={"username"} type={"password"}/>
+                <FormSemiHeader  label={"password"}/>
+                 <div >
+                  <div className="relative">
+                    <FormInputCompo  placeholder={"username"} type={passwordType}/>
+
+                     <div className="absolute top-1/2 -translate-y-1/2 right-3 cursor-pointer">
+                            {
+                             passwordType === "password"?<FaEyeSlash onClick={()=>{
+                            setPasswordType("text")
+                            }} className="dark:text-white"/>:<FaEye onClick={()=>{
+                            setPasswordType("password")
+                            }} className="dark:text-white"/>
+
+                            }
+                     </div>
+                  </div>
+                </div>
+                
             </div>
             <div>
-              <BtnCompo label={"Sign in"} />
+              <FormBtnCompo label={"Sign in"} />
+              <FormBtmCompo to={"/signup"} text={"Don't have an account ? "} totext={" Sign up "} />
             </div>            
           </div>
         </div>   
