@@ -3,9 +3,9 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-700/40 dark:bg-black/90 dark:text-white  py-12 px-4 border-t ">
+    <footer className="bg-gray-700/40 dark:bg-black/90 dark:text-white  pt-12 pb-30 px-4 border-t ">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm">&copy; {new Date().getFullYear()} SubTrack. All rights reserved.</p>
+        <p className="text-sm">&copy; {new Date().getFullYear()} SubTrack . All rights reserved.</p>
 
         <div className="flex items-center space-x-4">
           <a href="https://github.com/prithu64" className="hover:text-gray-400 transition"><FaGithub size={25} /></a>

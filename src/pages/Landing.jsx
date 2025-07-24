@@ -5,19 +5,11 @@ import How from "./How"
 
 function Landing() {
   return (
-    <div className='overflow-x-hidden'>
-      <div className="">
-        <Navbar/>
-      </div>
-       
-
-       <div>
-         <Hero/>
-       </div>
-
-       
-       <Footer/>
-
+    <div className='min-h-screen overflow-x-hidden '>
+      
+      <Navbar/>  
+      <Hero/>
+      <Footer/>
     </div>
   )
 }
