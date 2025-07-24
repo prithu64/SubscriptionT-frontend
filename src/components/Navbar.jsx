@@ -19,13 +19,8 @@ function Navbar() {
          </button>  
       </div>
    </div>
-   
-   {showMenu && (
-  <div
-    onClick={() => setShowMenu(false)}
-    className="fixed inset-0 dark:bg-black/50  bg-opacity-40 z-40 transition-opacity duration-300 md:hidden"
-  />
-)}
+
+  
    
    <div className={ `md:hidden fixed h-screen  dark:bg-white/10 backdrop-blur-xs w-[60%]  dark:text-white/60  top-0 right-0 shadow-lg border-l dark:border-white/30 transform transition-transform duration-300 ease-in-out z-50 ${showMenu?"translate-x-0":"translate-x-full"}`}>
          <div className="flex flex-col  px-2 pt-5">
@@ -39,6 +34,13 @@ function Navbar() {
               </ul>
          </div>      
     </div>
+
+     {showMenu && (
+  <div
+    onClick={() => setShowMenu(false)}
+    className="fixed inset-0 dark:bg-black/50 bg-white/50  bg-opacity-40 z-40 transition-opacity duration-300 md:hidden"
+  />
+)}
    
       
   </div>
