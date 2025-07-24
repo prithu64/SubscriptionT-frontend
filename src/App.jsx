@@ -5,10 +5,14 @@ import Signup from './pages/Signup'
 import Signin from './pages/Signin'
 import ForgotPassword from './pages/ForgotPassword'
 
+
+
+
 function App() {
+ 
   return (
-    <>
-    <div className='dark'>
+  
+      <div className='dark'>
        <BrowserRouter>
           <Routes>
              <Route path='/' element={<Landing/>} />
@@ -18,7 +22,10 @@ function App() {
            </Routes>
       </BrowserRouter>
     </div>
-    </>
+  
+    
+   
+    
   )
 }
 
