@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="w-full  dark:bg-black/90 dark:text-white  pt-20 pb-22 px-4 ">
+    <div className="w-full dark:bg-black/90 dark:text-white  pt-20 pb-22 px-4 ">
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl md:my-20  mx-auto">
         
         {/* Left Content */}
@@ -17,12 +17,12 @@ function Hero() {
           </p>
           <div className="space-x-3 mt-5">
             <Link to="/signin">
-              <button className="font-semibold outline-none rounded-md border dark:border-white border-black bg-transparent text-center min-w-[130px] py-1.5 cursor-pointer">
+              <button className="font-semibold outline-none rounded-md border dark:hover:bg-white dark:hover:text-black dark:border-white border-black bg-transparent text-center min-w-[130px] py-1.5 cursor-pointer">
                 Log In
               </button>
             </Link>
             <Link to="/signup">
-              <button className="dark:text-black font-semibold outline-none rounded-md dark:bg-white/85 border text-white bg-black/85 text-center py-1.5 cursor-pointer min-w-[130px]">
+              <button className="dark:text-black font-semibold outline-none rounded-md dark:hover:bg-white/50 dark:bg-white/85 border text-white bg-black/85 text-center py-1.5 cursor-pointer min-w-[130px]">
                 Get Started
               </button>
             </Link>
