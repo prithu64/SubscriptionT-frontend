@@ -14,8 +14,8 @@ function Navbar() {
           <div className="font-semibold text-lg">SubTrack</div>
 
           {/* Menu icon */}
-          <button className="hidden md:block">
-            <BsFillQuestionCircleFill size={20} />
+          <button className="hidden md:block cursor-pointer">
+            <BsFillQuestionCircleFill size={25} />
           </button>
           <button className="md:hidden" onClick={() => setShowMenu(true)}>
             <GiHamburgerMenu size={20} />

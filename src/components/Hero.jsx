@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="w-full  dark:bg-black/90 dark:text-white md:py-35 pt-20 md:pt-25 py-10 px-4 ">
+    <div className="w-full  dark:bg-black/90 dark:text-white  pt-20 pb-22 px-4 ">
       <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl md:my-20  mx-auto">
         
         {/* Left Content */}

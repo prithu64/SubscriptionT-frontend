@@ -15,21 +15,21 @@ const How = () => {
 
       <div className="grid gap-8 md:grid-cols-3 mx-auto md:my-20 max-w-4xl justify-center">
         {/* Step 1 */}
-        <div className="  max-w-3xs py-8 px-3 border dark:border-white/30  rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300">
+        <div className="  max-w-3xs py-6 px-1 border dark:border-white/30  rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300">
           <FaUserPlus className="text-7xl text-black dark:hover:text-white dark:text-white/60 mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">1. Sign Up</h3>
           <p>Create your account and set up your profile in seconds.</p>
         </div>
 
         {/* Step 2 */}
-        <div className=" max-w-3xs p-6 border dark:border-white/30 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300">
+        <div className=" max-w-3xs px-2 py-6 border dark:border-white/30 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow duration-300">
           <FaListAlt className="text-7xl text-black dark:hover:text-white dark:text-white/60 mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">2. Add Subscriptions</h3>
           <p>Add all your recurring services and track due dates easily.</p>
         </div>
 
         {/* Step 3 */}
-        <div className="  max-w-3xs p-6 border rounded-xl dark:border-white/30  shadow-md text-center hover:shadow-xl transition-shadow duration-300">
+        <div className="  max-w-3xs px-2 py-6 border rounded-xl dark:border-white/30  shadow-md text-center hover:shadow-xl transition-shadow duration-300">
           <FaBell className="text-7xl text-black dark:hover:text-white dark:text-white/60 mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">3. Get Reminders</h3>
           <p>Receive timely alerts before renewals or unexpected charges.</p>

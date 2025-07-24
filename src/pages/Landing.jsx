@@ -15,10 +15,7 @@ function Landing() {
          <Hero/>
        </div>
 
-       <div>
-        <How/>
-       </div>
-
+       
        <Footer/>
 
     </div>
