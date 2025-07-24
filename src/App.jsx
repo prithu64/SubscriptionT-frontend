@@ -13,7 +13,7 @@ function App() {
   return (
   
       <div className='dark'>
-       <BrowserRouter>
+       <BrowserRouter >
           <Routes>
              <Route path='/' element={<Landing/>} />
              <Route path='/signup' element={<Signup/>} />

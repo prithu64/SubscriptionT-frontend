@@ -13,7 +13,7 @@ function Signin() {
   const [passwordType,setPasswordType] = useState("password");
 
   return (
-       <div className="dark:bg-black/90 h-screen flex justify-center items-center">
+       <div className="dark:bg-black/90 min-h-screen flex justify-center items-center">
         <div>
           <div className="space-y-4 border dark:border-white/30  rounded-md px-4 py-6">
             <div>
