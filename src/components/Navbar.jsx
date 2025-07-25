@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { MdWbSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
+import { DarkThemeContext } from "../contexts/DarkThemeContext.js";
 
 
 function Navbar() { 
-  const [isDark,setIsDark] = useState(true)
+  
+  const {isDark,setIsDark} = useContext(DarkThemeContext)
+
+  const toggleDarkTheme = ()=>{
+    if(isDark === "dark"){
+      setIsDark("")
+    }else{
+      setIsDark("dark")
+    }
+  }
 
   return (
     <div className="fixed top-0 z-50 w-full dark:text-white ">
@@ -16,9 +26,9 @@ function Navbar() {
 
         
         <div className="flex items-center gap-x-4">
-           <button onClick={()=>setIsDark((prev)=>!prev)}>
+           <button onClick={toggleDarkTheme}>
           {
-            isDark?<FaMoon size={20} />:<MdWbSunny  size={20}/>
+            isDark === 'dark'?<FaMoon size={20} />:<MdWbSunny  size={20}/>
           } 
          </button>
           {/* how to ? */}
