@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="w-full dark:bg-black/90 dark:text-white pt-22 pb-22 px-4 ">
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl md:my-20  mx-auto">
+    <div className="  dark:text-white px-4 py-2 flex flex-grow ">
+      <div className="flex flex-col  md:flex-row items-center  justify-between max-w-6xl md:my-20  mx-auto">
         
         {/* Left Content */}
         <div className="md:w-1/2">
