@@ -6,6 +6,7 @@ import Signin from './pages/Signin'
 import ForgotPassword from './pages/ForgotPassword'
 import { DarkThemeContext } from './contexts/DarkThemeContext'
 import { useState } from 'react'
+import DashBoard from './pages/DashBoard'
 
 
 
@@ -13,9 +14,10 @@ import { useState } from 'react'
 function App() {
 
   const [isDark,setIsDark] = useState("dark")
+  const [modal,setModal] = useState(false)
  
   return (
-     <DarkThemeContext.Provider value={{isDark,setIsDark}}>
+     <DarkThemeContext.Provider value={{isDark,setIsDark,modal,setModal}}>
         <div className={`${isDark}`}>
           <BrowserRouter >
              <Routes>
@@ -23,6 +25,7 @@ function App() {
                <Route path='/signup' element={<Signup/>} />
                <Route path='/signin' element={<Signin/>} />
                <Route path='/forgotpassword' element={<ForgotPassword/>} />
+               <Route path='/dashboard' element={<DashBoard/>}/>
              </Routes>
           </BrowserRouter>
       </div>

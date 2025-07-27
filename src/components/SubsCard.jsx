@@ -1,0 +1,85 @@
+import React, { useContext } from 'react'
+import { FaCreditCard, FaCalendarAlt, FaTag, FaMoneyBill } from "react-icons/fa";
+import { DarkThemeContext } from '../contexts/DarkThemeContext';
+
+function SubsCard() {
+ const {modal,setModal} = useContext(DarkThemeContext)
+  return (
+    
+        modal && (
+        
+        <div className='w-full h-full fixed bg-black/50 backdrop-blur-lg flex items-center justify-center z-50 inset-0'>
+         <div className="relative dark:text-white max-w-sm w-full mx-auto p-6 border dark:border-white/30 bg-white/5 dark:bg-white/5 rounded-xl shadow-sm space-y-4">
+       
+      <h2 className="text-lg font-semibold text-black dark:text-white mb-2">Create New Subscription</h2>
+      <h2 className='cursor-pointer' onClick={()=>{
+        setModal(false)
+      }} > X</h2>
+      
+      <div className="flex items-center gap-4">
+        <div className="p-2 rounded-full bg-white/10 dark:bg-white/10 text-gray-700 dark:text-white">
+          <FaTag size={18} />
+        </div>
+        <div className="flex flex-col w-full">
+          <label className="text-sm text-gray-600 dark:text-gray-400 mb-1">Subscription Name</label>
+          <input 
+            type="text" 
+            placeholder="e.g. Netflix" 
+            className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm text-black dark:text-white dark:placeholder-white/40 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <div className="p-2 rounded-full bg-white/10 dark:bg-white/10 text-gray-700 dark:text-white">
+          <FaCreditCard size={18} />
+        </div>
+        <div className="flex flex-col w-full">
+          <label className="text-sm text-gray-600 dark:text-gray-400 mb-1">Payment Plan</label>
+          <input 
+            type="text" 
+            placeholder="Monthly / Yearly" 
+            className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm text-black dark:text-white dark:placeholder-white/40 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <div className="p-2 rounded-full bg-white/10 dark:bg-white/10 text-gray-700 dark:text-white">
+          <FaMoneyBill size={18} />
+        </div>
+        <div className="flex flex-col w-full">
+          <label className="text-sm text-gray-600 dark:text-gray-400 mb-1">Amount</label>
+          <input 
+            type="number" 
+            placeholder="e.g. 999" 
+            className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm text-black dark:text-white dark:placeholder-white/40 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <div className="p-2 rounded-full bg-white/10 dark:bg-white/10 text-gray-700 dark:text-white">
+          <FaCalendarAlt size={18} />
+        </div>
+        <div className="flex flex-col w-full">
+          <label className="text-sm text-gray-600 dark:text-gray-400 mb-1">Payment Date</label>
+          <input 
+            type="date" 
+            className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm text-black dark:text-white dark:placeholder-white/40 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <button className="w-full mt-4 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white text-sm rounded-md transition">
+        Add Subscription
+      </button>
+    </div>
+    </div>
+  )
+    
+   
+  );
+}
+
+export default SubsCard;
