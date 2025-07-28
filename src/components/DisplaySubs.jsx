@@ -1,30 +1,31 @@
+import { useEffect, useState } from "react";
 import DisplaySubsCard from "./DisplaySubCard";
+import axios from "axios";
 
-const subscriptions = [
-  {
-    id: 1,
-    name: 'Netflix',
-    plan: 'Monthly',
-    amount: 499,
-    date: '2025-08-01',
-  },
-  {
-    id: 2,
-    name: 'Spotify',
-    plan: 'Annual',
-    amount: 999,
-    date: '2025-12-20',
-  },
-  {
-    id: 3,
-    name: 'Figma Pro',
-    plan: 'Monthly',
-    amount: 899,
-    date: '2025-08-10',
-  },
-];
 
-function DisplaySubs() {
+
+
+
+
+function DisplaySubs() { 
+
+const getSubs = async()=>{
+    const token = localStorage.getItem("token")
+    const response =  await axios.get("http://localhost:3000/api/v1/subs/getSubs",{
+     headers : {
+      authorization : `Bearer ${token}`
+     }
+  })
+  setSubcription(response.data.data)
+  }
+
+const [subscriptions,setSubcription] = useState([])
+
+  useEffect(()=>{
+   getSubs()
+  },[])
+ 
+
   return (
     <div className="px-4 max-w-5xl mx-auto py-10 space-y-3 dark:text-white text-black/30">
   <div className="flex items-center justify-center space-x-2">
@@ -38,11 +39,11 @@ function DisplaySubs() {
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {subscriptions.map((sub) => (
       <DisplaySubsCard
-        key={sub.id}
-        name={sub.name}
-        plan={sub.plan}
-        amount={sub.amount}
-        date={sub.date}
+        key={sub._id}
+        name={sub.subs_name}
+        plan={sub.payment_plan}
+        amount={sub.payment_amount}
+        date={sub.payment_date}
       />
     ))}
   </div>

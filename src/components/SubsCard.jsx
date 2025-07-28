@@ -1,8 +1,57 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { DarkThemeContext } from '../contexts/DarkThemeContext';
+import axios from 'axios';
 
 function SubsCard() {
  const {modal,setModal} = useContext(DarkThemeContext)
+ const [subs_name,setSubname] = useState(null)
+ const [payment_date,setPaymentDate] = useState(null)
+ const [payment_plan,setPaymentPlan] = useState(null)
+ const [payment_amount,setPaymentAmount] = useState(null);
+ const [responseState,setResponseState] = useState(false);
+ const [showPopUp,setPopUp] = useState(false)
+ const [resMessage,setResMessage] = useState(null)
+
+
+useEffect(()=>{
+ const timeout = setTimeout(()=>{
+   setPopUp(false)
+ },2000)
+ return ()=>clearTimeout(timeout)
+},[showPopUp])
+
+
+const handleCreateSub = async()=>{
+  console.log("subs_name",subs_name)
+  console.log(payment_amount,payment_date,payment_plan)
+   if(!subs_name || !payment_amount || !payment_date || !payment_plan){
+    alert("All fields required")
+    return;
+   }
+   setResponseState(true)
+   try {
+    const token =  localStorage.getItem("token")
+    const response = await axios.post("http://localhost:3000/api/v1/subs/makesub",{
+      subs_name,
+      payment_amount: Number(payment_amount),
+      payment_date,
+      payment_plan
+    },{
+      headers : {
+        authorization : `Bearer ${token}`
+      }
+    })
+    setResMessage(response.data.message)
+    setPopUp(true)
+    setResponseState(false)
+
+   } catch (error) {
+    setResponseState(false)
+    console.log("error:", error);
+    const apiMessage = error.response?.data?.message || "Something went wrong";
+    console.log("api error:", apiMessage);
+   }
+ }
 
 
   return (
@@ -24,6 +73,9 @@ function SubsCard() {
         <div className="flex flex-col w-full">
           <label className="text-sm  dark:text-gray-400 mb-1">Subscription Name</label>
           <input 
+            onChange={(e)=>{
+              setSubname(e.target.value)
+            }}
             type="text" 
             placeholder="e.g. Netflix" 
             className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm  dark:text-white dark:placeholder-white/40 focus:outline-none"
@@ -36,6 +88,9 @@ function SubsCard() {
         <div className="flex flex-col w-full">
           <label className="text-sm  dark:text-gray-400 mb-1">Payment Plan</label>
           <input 
+            onChange={(e)=>{
+              setPaymentPlan(e.target.value)
+            }}
             type="text" 
             placeholder="Monthly / Yearly" 
             className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm  dark:text-white dark:placeholder-white/40 focus:outline-none"
@@ -47,7 +102,10 @@ function SubsCard() {
         
         <div className="flex flex-col w-full">
           <label className="text-sm  dark:text-gray-400 mb-1">Amount</label>
-          <input 
+          <input
+           onChange={(e)=>{
+              setPaymentAmount(e.target.value)
+            }} 
             type="number" 
             placeholder="e.g. 999" 
             className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm  dark:text-white dark:placeholder-white/40 focus:outline-none"
@@ -60,16 +118,25 @@ function SubsCard() {
         <div className="flex flex-col w-full">
           <label className="text-sm  dark:text-gray-400 mb-1">Payment Date</label>
           <input 
+           onChange={(e)=>{
+              setPaymentDate(e.target.value)
+            }}
             type="date" 
             className="px-3 py-2 rounded-md bg-white/10 border border-white/20 text-sm dark:text-white dark:placeholder-white/40 focus:outline-none"
           />
         </div>
       </div>
 
-      <button className="w-full mt-4 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white text-sm rounded-md transition">
+      <button disabled = {responseState} onClick={handleCreateSub} className={`${responseState ? "cursor-not-allowed opacity-50":"cursor-pointer"}  w-full mt-4 py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white text-sm rounded-md transition`}>
         Add Subscription
-      </button>
+      </button>     
     </div>
+        <div className={`fixed top-10 z-80 flex justify-center ${showPopUp?"opacity-100 scale-100":"opacity-0 scale-95"} transition-all duration-300 ease-in-out`}>
+         <div className="dark:text-white p-2 shadow-lg rounded">
+            🎉{resMessage}
+         </div>
+       </div>
+    
     </div>
   )
     
