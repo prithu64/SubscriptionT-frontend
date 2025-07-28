@@ -5,10 +5,12 @@ import { useContext} from "react";
 import { DarkThemeContext } from "../contexts/DarkThemeContext.js";
 import { IoIosLogOut } from "react-icons/io";
 import { CiCirclePlus } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 function UserNav() {
     
     const {isDark,setIsDark,setModal} = useContext(DarkThemeContext)
+    const navigate = useNavigate()
     
     const toggleModal = ()=>{
         setModal(true)
@@ -21,6 +23,12 @@ function UserNav() {
         setIsDark("dark")
       }
     }  
+    
+    const logOut = ()=>{
+      localStorage.setItem("token","")
+      navigate("/",{replace:true})
+    }
+
   return (
  <div className="py-5 sticky z-[50] top-0">
      <div
@@ -43,7 +51,7 @@ function UserNav() {
     className=" hover:text-gray-800 mx-2 transition-all duration-200 ease-in-out hover:bg-gray-200 hover:shadow-md rounded-full p-1 focus:outline-none "
   >
      {
-                isDark === 'dark'?<FaMoon size={20} />:<MdWbSunny  size={20}/>
+       isDark === 'dark'?<FaMoon size={20} />:<MdWbSunny  size={20}/>
      } 
   </button>
 
@@ -55,9 +63,9 @@ function UserNav() {
   </button>
 
   <button
-    className=" hover:text-gray-800 dark:hover:text-white mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
+    className=" hover:text-gray-800 cursor-pointer dark:hover:text-white mx-2 transition-transform duration-200 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
   >
-   <IoIosLogOut size={25}/>
+   <IoIosLogOut onClick={logOut}  size={25}/>
   </button>
  
 </div>

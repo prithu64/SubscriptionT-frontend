@@ -17,6 +17,10 @@ function DisplaySubs({subscriptions,refetch}) {
     </div>
   </div>
 
+  {
+    subscriptions.length < 1 ? <div className="flex justify-center mt-15 items-center dark:text-white/60">are you poor ? </div>:""
+  }
+
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {subscriptions.map((sub) => (
       <DisplaySubsCard
