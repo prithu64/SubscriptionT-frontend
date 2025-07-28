@@ -1,3 +1,5 @@
+import DisplaySubsCard from '../components/DisplaySubCard'
+import DisplaySubs from '../components/DisplaySubs'
 import SubsCard from '../components/SubsCard'
 import SubsInfo from '../components/SubsInfo'
 import UserNav from '../components/UserNav'
@@ -8,6 +10,7 @@ function DashBoard() {
       <UserNav/>
       <SubsInfo/>
       <SubsCard/>
+      <DisplaySubs/>
     </div>
   )
 }

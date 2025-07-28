@@ -4,7 +4,7 @@ import { GrDiamond } from "react-icons/gr";
 
 function SubsInfo() {
   return (
-    <div className="dark:text-white max-w-6xl w-full grid grid-cols-1 md:grid-cols-4 gap-4 mx-auto text-sm md:text-base">
+    <div className="dark:text-white max-w-xl w-full grid grid-cols-1 md:grid-cols-2 py-10 gap-4 mx-auto text-sm md:text-base">
       
       <div className="border dark:border-white/30 bg-white/5 dark:bg-white/5 p-4 rounded-xl shadow-sm flex items-center gap-4">
         <div className="p-2 rounded-full bg-white/10 dark:bg-white/10 text-gray-700 dark:text-white">
