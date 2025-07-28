@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { DarkThemeContext } from '../contexts/DarkThemeContext';
 import axios from 'axios';
 
-function SubsCard() {
+function SubsCard({refatch}) {
  const {modal,setModal} = useContext(DarkThemeContext)
  const [subs_name,setSubname] = useState(null)
  const [payment_date,setPaymentDate] = useState(null)
@@ -44,6 +44,9 @@ const handleCreateSub = async()=>{
     setResMessage(response.data.message)
     setPopUp(true)
     setResponseState(false)
+    if(refatch){
+      refatch()
+    }
 
    } catch (error) {
     setResponseState(false)

@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
+
 import DisplaySubsCard from "./DisplaySubCard";
-import axios from "axios";
+
+
+function DisplaySubs({subscriptions,refetch}) { 
 
 
 
-
-
-
-function DisplaySubs() { 
-
-const getSubs = async()=>{
-    const token = localStorage.getItem("token")
-    const response =  await axios.get("http://localhost:3000/api/v1/subs/getSubs",{
-     headers : {
-      authorization : `Bearer ${token}`
-     }
-  })
-  setSubcription(response.data.data)
-  }
-
-const [subscriptions,setSubcription] = useState([])
-
-  useEffect(()=>{
-   getSubs()
-  },[])
- 
 
   return (
     <div className="px-4 max-w-5xl mx-auto py-10 space-y-3 dark:text-white text-black/30">
@@ -39,11 +20,13 @@ const [subscriptions,setSubcription] = useState([])
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {subscriptions.map((sub) => (
       <DisplaySubsCard
+        id = {sub._id}
         key={sub._id}
         name={sub.subs_name}
         plan={sub.payment_plan}
         amount={sub.payment_amount}
         date={sub.payment_date}
+        refetch = {refetch}
       />
     ))}
   </div>
