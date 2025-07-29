@@ -29,7 +29,7 @@ function DashBoard() {
   return (
     <div className='dark:bg-black/90  min-h-screen px-3'>
       <UserNav/>
-      <SubsInfo refatch={getSubs}/>
+      <SubsInfo subscriptions={subscriptions}/>
       <SubsCard refatch = {getSubs}/>
       <DisplaySubs subscriptions = {subscriptions} refetch={getSubs} />
     </div>
