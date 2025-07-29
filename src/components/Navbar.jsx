@@ -33,10 +33,10 @@ function Navbar() {
             isDark === 'dark'?<FaMoon size={20} />:<MdWbSunny  size={20}/>
           } 
          </button>
-          {/* how to ? */}
+         {/* how to ? */}
           <button className="cursor-pointer">
             <BsFillQuestionCircleFill size={25} />
-          </button>
+          </button> 
         </div>
         
         </div>
