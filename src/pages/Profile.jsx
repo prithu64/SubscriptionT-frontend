@@ -51,15 +51,9 @@ function Profile() {
     }
  }
 
-
-
  useEffect(()=>{
    getUser()
  },[])
-
- useEffect(()=>{
-    console.log("user ::",user)
- },[user])
 
   return (
     <div className='dark:bg-black/90 dark:text-white min-h-screen flex flex-col justify-center items-center px-2'>

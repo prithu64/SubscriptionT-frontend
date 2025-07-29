@@ -2,7 +2,7 @@ import React from 'react'
 import { FaWallet, FaList, FaRegCalendarAlt } from "react-icons/fa";
 import { GrDiamond } from "react-icons/gr";
 
-function SubsInfo() {
+function SubsInfo({refatch}) {
   return (
     <div className="dark:text-white max-w-xl w-full grid grid-cols-1 md:grid-cols-2 py-10 gap-4 mx-auto text-sm md:text-base">
       

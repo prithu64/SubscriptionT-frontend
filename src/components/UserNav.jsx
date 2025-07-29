@@ -32,12 +32,12 @@ function UserNav() {
   return (
  <div className="py-5 sticky z-[50] top-0">
      <div
-  className="  flex dark:border dark:border-white/30  items-center justify-between dark:text-white text-gray-600 bg-opacity-80 backdrop-blur-md rounded-full px-6 py-2 shadow-lg max-w-3xl mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 z-50"
+  className="  flex dark:border dark:border-white/30  items-center justify-between dark:text-white text-gray-600 bg-opacity-80 backdrop-blur-md rounded-full px-3 py-2 shadow-lg max-w-3xl mx-auto transition-all duration-300 hover:shadow-xl hover:bg-opacity-90 z-50"
 >
   <button
-    className=" dark:text-white mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full font-semibold"
+    className=" dark:text-white mx-2 transition-transform duration-200 ease-in-out hover:scale-110 focus:outline-none  rounded-full"
   >
-   SubTrack
+    {isDark ? <img className="w-[100px] h-[30px] md:w-[120px] md:h-[35px]" src="/logoDarknew.png"/>:<img className="w-[100px] h-[30px] md:w-[120px] md:h-[35px]" src="/logoWhitenew.png"/>}
   </button>
 
   <button
