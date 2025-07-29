@@ -7,6 +7,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import { DarkThemeContext } from './contexts/DarkThemeContext'
 import { useState } from 'react'
 import DashBoard from './pages/DashBoard'
+import Profile from './pages/Profile'
 
 
 
@@ -26,6 +27,7 @@ function App() {
                <Route path='/signin' element={<Signin/>} />
                <Route path='/forgotpassword' element={<ForgotPassword/>} />
                <Route path='/dashboard' element={<DashBoard/>}/>
+               <Route path='/profile' element={<Profile/>}/>
              </Routes>
           </BrowserRouter>
       </div>

@@ -41,6 +41,7 @@ function UserNav() {
   </button>
 
   <button
+    onClick={()=>navigate("/profile")}
     className="hover:text-gray-800 dark:hover:text-white mx-2 transition-all duration-200 ease-in-out hover:rotate-12 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full"
   >
      <CgProfile size={25} />
