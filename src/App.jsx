@@ -16,8 +16,9 @@ function App() {
 
   const [isDark,setIsDark] = useState("dark")
   const [modal,setModal] = useState(false)
- 
+  
   return (
+
      <DarkThemeContext.Provider value={{isDark,setIsDark,modal,setModal}}>
         <div className={`${isDark}`}>
           <BrowserRouter >
@@ -27,7 +28,7 @@ function App() {
                <Route path='/signin' element={<Signin/>} />
                <Route path='/forgotpassword' element={<ForgotPassword/>} />
                <Route path='/dashboard' element={<DashBoard/>}/>
-               <Route path='/profile' element={<Profile/>}/>
+               <Route path='/profile'   element={<Profile/>}/>
              </Routes>
           </BrowserRouter>
       </div>

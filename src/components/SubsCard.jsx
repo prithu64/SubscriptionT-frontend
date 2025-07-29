@@ -22,8 +22,7 @@ useEffect(()=>{
 
 
 const handleCreateSub = async()=>{
-  console.log("subs_name",subs_name)
-  console.log(payment_amount,payment_date,payment_plan)
+ 
    if(!subs_name || !payment_amount || !payment_date || !payment_plan){
     alert("All fields required")
     return;
