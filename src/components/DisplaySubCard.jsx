@@ -61,7 +61,7 @@ function DisplaySubCard({ name, plan, amount, date ,id,refetch}) {
         <span className="text-sm font-medium">{upcomingPayment? upcomingPayment.toLocaleDateString():"calculating..."}</span>
       </div>
 
-      <div className="flex justify-end items-center dark:text-white/30">
+      <div className="flex justify-end items-center dark:text-white/30 text-black/50">
         <span className="text-sm font-medium">mm/dd/yy</span>
       </div>
 

@@ -89,7 +89,10 @@ function SubsInfo({subscriptions}) {
         <div>
           <p className="text-gray-600 dark:text-gray-400 font-medium text-sm">Upcoming Payments</p>
           {
-            upcomingSubs && (<h2 className="text-lg font-semibold text-black dark:text-white">{upcomingSubs.length} due in next 7 days</h2>) 
+            upcomingSubs.length === 0  ? "None":""
+          }
+          {
+            upcomingSubs.length >=1 && (<h2 className="text-lg font-semibold text-black dark:text-white">{upcomingSubs.length} due in next 7 days</h2>) 
           }
           
         </div>
@@ -101,6 +104,9 @@ function SubsInfo({subscriptions}) {
         </div>
         <div>
           <p className="text-gray-600 dark:text-gray-400 font-medium text-sm">Most Expensive Subscription</p>
+          {
+            costliestSub ? "":"None"
+          }
           {
             costliestSub && (
                 <h2 className="text-lg font-semibold text-black dark:text-white">{costliestSub.subs_name}- ₹{costliestSub.payment_amount}</h2>
