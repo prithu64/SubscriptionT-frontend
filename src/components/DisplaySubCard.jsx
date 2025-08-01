@@ -18,11 +18,19 @@ function DisplaySubCard({ name, plan, amount, date ,id,refetch}) {
   
   const nextPayment = ()=>{
    const createdDate = new Date(date)
+   const today = new Date;
    const nextDate = new Date(createdDate);
+   
+   const daysPassed = (today - createdDate)/(1000*60*60*24);
+  
+
+  
    if(plan.toLowerCase() === "monthly"){
-     nextDate.setDate(nextDate.getDate()+30)
+     const monthsPassed  = Math.floor(daysPassed/30);
+     nextDate.setDate(nextDate.getDate()+ (monthsPassed+1)*30)
    }else if(plan.toLowerCase()==="yearly"){
-     nextDate.setDate(nextDate.getDate()+365)
+    const yearsPassed = Math.floor(daysPassed/365);
+     nextDate.setDate(nextDate.getDate()+(yearsPassed+1)*365)
    }
    setPayment(nextDate)
   }
@@ -51,6 +59,10 @@ function DisplaySubCard({ name, plan, amount, date ,id,refetch}) {
       <div className="flex justify-between items-center">
         <span className="text-sm dark:text-gray-300"> Next Payment Date</span>
         <span className="text-sm font-medium">{upcomingPayment? upcomingPayment.toLocaleDateString():"calculating..."}</span>
+      </div>
+
+      <div className="flex justify-end items-center dark:text-white/30">
+        <span className="text-sm font-medium">mm/dd/yy</span>
       </div>
 
       <button onClick={handleDelete} className="w-full mt-3 py-2 px-4 bg-red-600 hover:bg-red-700 text-white text-sm rounded-md transition">

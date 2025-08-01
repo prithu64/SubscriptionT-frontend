@@ -29,10 +29,23 @@ function SubsInfo({subscriptions}) {
     const today = new Date();
     const nextWeek = new Date();
     nextWeek.setDate(today.getDate()+7)
-
+    
     const upcoming = subscriptions.filter((sub)=>{
-      const paymentdate = new Date(sub.payment_date)
-      return paymentdate >=today && paymentdate<=nextWeek
+      const createdDate = new Date(sub.payment_date); //creaated date of the sub
+      const timeDiff = today - createdDate;          //time passed between createdDate and current date(gives in milliseconds)
+      const daysPassed = Math.floor(timeDiff/(1000*60*60*24));  //convert milliseconds into days
+      const monthPassed = Math.floor(daysPassed/30);   //convert days into months passed(30-days cycle)
+      
+      //.getDate() - gets the day of the month
+
+      const nextPayment = new Date(createdDate);
+      nextPayment.setDate(createdDate.getDate() + (monthPassed*30));
+
+      if(nextPayment < today){
+        nextPayment.setDate(nextPayment.getDate() + 30);
+      }
+
+      return nextPayment >= today && nextPayment <=nextWeek
     })
 
    setUpcoming(upcoming);
@@ -42,6 +55,7 @@ function SubsInfo({subscriptions}) {
    totalSpend()
    costlySub()
    UpcomingPayments()
+   console.log("upcoming:",upcomingSubs)
   },[subscriptions])
 
 
