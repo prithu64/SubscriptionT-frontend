@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { MdWbSunny } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { DarkThemeContext } from "../contexts/DarkThemeContext.js";
+import HowItWorks from "./HowItWorks.jsx";
 
 
 function Navbar() { 
-  
+  const [showModal, setShowModal] = useState(false)
   const {isDark,setIsDark} = useContext(DarkThemeContext)
 
   const toggleDarkTheme = ()=>{
@@ -35,12 +36,14 @@ function Navbar() {
          </button>
          {/* how to ? */}
           <button className="cursor-pointer">
-            <BsFillQuestionCircleFill size={25} />
+            <BsFillQuestionCircleFill  onClick={() => setShowModal(true)} size={25} />
           </button> 
         </div>
         
         </div>
       </div>
+
+      <HowItWorks isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 }
