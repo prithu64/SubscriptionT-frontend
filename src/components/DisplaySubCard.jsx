@@ -33,6 +33,7 @@ function DisplaySubCard({ name, plan, amount, date ,id,refetch}) {
     const yearsPassed = Math.floor(daysPassed/365);
      nextDate.setDate(nextDate.getDate()+(yearsPassed+1)*365)
    }
+   console.log("next date : ",nextDate)
    setPayment(nextDate)
   }
 
