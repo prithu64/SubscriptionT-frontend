@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { DarkThemeContext } from '../contexts/DarkThemeContext';
 import axios from 'axios';
-import { format } from 'date-fns';
+
 
 function SubsCard({refatch}) {
  const {modal,setModal} = useContext(DarkThemeContext)
@@ -34,7 +34,7 @@ const handleCreateSub = async()=>{
     const response = await axios.post("https://subscriptiont-backend.onrender.com/api/v1/subs/makesub",{
       subs_name,
       payment_amount:Number(payment_amount),
-      payment_date :new Date(payment_date).toISOString(),
+      payment_date :new Date(payment_date + "T00:00:00").toISOString(),
       payment_plan
     },{
       headers : {
