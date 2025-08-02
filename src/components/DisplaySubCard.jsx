@@ -17,8 +17,8 @@ function DisplaySubCard({ name, plan, amount, date ,id,refetch}) {
   }
   
   const nextPayment = ()=>{
-   const createdDate = new Date(date)
-   const today = new Date;
+   const createdDate = new Date(new Date(date).toISOString().split('T')[0]);
+   const today = new Date(new Date().toISOString().split('T')[0]);
    const nextDate = new Date(createdDate);
    
    const daysPassed = (today - createdDate)/(1000*60*60*24);
