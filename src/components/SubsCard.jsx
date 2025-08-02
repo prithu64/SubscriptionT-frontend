@@ -33,8 +33,8 @@ const handleCreateSub = async()=>{
     const token =  localStorage.getItem("token")
     const response = await axios.post("https://subscriptiont-backend.onrender.com/api/v1/subs/makesub",{
       subs_name,
-      payment_amount: Number(payment_amount),
-      payment_date : format(new Date(payment_date), 'MM/dd/yyyy'),
+      payment_amount:Number(payment_amount),
+      payment_date :new Date(payment_date).toISOString(),
       payment_plan
     },{
       headers : {
