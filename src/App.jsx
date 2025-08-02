@@ -8,7 +8,6 @@ import { DarkThemeContext } from './contexts/DarkThemeContext'
 import { useState } from 'react'
 import DashBoard from './pages/DashBoard'
 import Profile from './pages/Profile'
-import EnterOTP from './pages/EnterOTP'
 import UpdatePass from './pages/UpdatePass'
 
 
