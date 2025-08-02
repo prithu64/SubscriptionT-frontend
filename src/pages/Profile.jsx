@@ -17,7 +17,7 @@ function Profile() {
  const getUser = async()=>{
     const token = localStorage.getItem("token")
     try {
-         const response = await axios.get("http://localhost:3000/api/v1/user/getuser",{
+         const response = await axios.get("https://subscriptiont-backend.onrender.com/api/v1/user/getuser",{
         headers : {
             authorization : `Bearer ${token}`
         }
@@ -37,7 +37,7 @@ function Profile() {
          try {
       const token = localStorage.getItem("token")
 
-      await axios.delete("http://localhost:3000/api/v1/user/deleteuser",{
+      await axios.delete("https://subscriptiont-backend.onrender.com/api/v1/user/deleteuser",{
         headers : {
           authorization : `Bearer ${token}`
         }

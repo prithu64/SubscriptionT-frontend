@@ -7,7 +7,7 @@ function DisplaySubCard({ name, plan, amount, date ,id,refetch}) {
 
   const handleDelete = async()=>{
     try {
-         await axios.delete(`http://localhost:3000/api/v1/subs/deletesub/${id}`)
+         await axios.delete(`https://subscriptiont-backend.onrender.com/api/v1/subs/deletesub/${id}`)
          refetch()
     } catch (error) {
       console.log("error::",error)

@@ -8,7 +8,7 @@ function ForgotPassword() {
   const [email,setEmail] = useState(null);
   const sendlink = async() =>{
     try {
-     await axios.post("http://localhost:3000/api/v1/user/resetlink",{
+     await axios.post("https://subscriptiont-backend.onrender.com/api/v1/user/resetlink",{
      email
     })
      console.log("email sent")

@@ -20,7 +20,7 @@ function UpdateModal({modal,setModal,refatch}) {
     }
 
     try {
-        const response = await axios.post("http://localhost:3000/api/v1/user/updateuser",payload,
+        const response = await axios.post("https://subscriptiont-backend.onrender.com/api/v1/user/updateuser",payload,
        {
         headers:{
           authorization : `Bearer ${token}`

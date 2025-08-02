@@ -10,7 +10,7 @@ const {token} = useParams();
 const handleUpdate = async()=>{
     try {
      if(password.length >= 6){
-      const response = await axios.post(`http://localhost:3000/api/v1/user/changepass/${token}`,{
+      const response = await axios.post(`https://subscriptiont-backend.onrender.com/api/v1/user/changepass/${token}`,{
       password : password
       })
       console.log("response : ",response.data.message)

@@ -4,9 +4,6 @@ import DisplaySubsCard from "./DisplaySubCard";
 
 function DisplaySubs({subscriptions,refetch}) { 
 
-
-
-
   return (
     <div className="px-4 max-w-5xl mx-auto py-10 space-y-3 dark:text-white text-black/30">
   <div className="flex items-center justify-center space-x-2">

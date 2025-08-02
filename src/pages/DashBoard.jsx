@@ -12,7 +12,7 @@ function DashBoard() {
 
   const getSubs = async () => {
     const token = localStorage.getItem("token");
-    const response = await axios.get("http://localhost:3000/api/v1/subs/getSubs", {
+    const response = await axios.get("https://subscriptiont-backend.onrender.com/api/v1/subs/getSubs", {
       headers: {
         authorization: `Bearer ${token}`,
       },
