@@ -78,7 +78,7 @@ function Profile() {
             </div>
 
             <div className="mx-auto space-x-4">
-                <button className=" px-3 py-2 border dark:hover:bg-gray-600 transition-transform duration-200 cursor-pointer">
+                <button onClick={()=>navigate("/forgotpassword")} className=" px-3 py-2 border dark:hover:bg-gray-600 transition-transform duration-200 cursor-pointer">
                   <TbPasswordUser size={20}/>
                 </button>
                 <button onClick={deleteUser}  className="px-3 py-2 border dark:hover:bg-gray-600 transition-transform duration-200 cursor-pointer">

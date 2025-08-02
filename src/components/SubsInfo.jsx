@@ -5,7 +5,7 @@ import { GrDiamond } from "react-icons/gr";
 function SubsInfo({subscriptions}) {
   const[totalCost,setTotal] = useState(null)
   const [costliestSub,setSub] = useState(null)
-  const [upcomingSubs,setUpcoming] = useState(null)
+  const [upcomingSubs,setUpcoming] = useState([])
 
   const totalSpend = ()=>{
       let total = 0 ;

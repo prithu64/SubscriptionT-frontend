@@ -9,6 +9,7 @@ import { useState } from 'react'
 import DashBoard from './pages/DashBoard'
 import Profile from './pages/Profile'
 import EnterOTP from './pages/EnterOTP'
+import UpdatePass from './pages/UpdatePass'
 
 
 
@@ -30,7 +31,8 @@ function App() {
                <Route path='/forgotpassword' element={<ForgotPassword/>} />
                <Route path='/dashboard' element={<DashBoard/>}/>
                <Route path='/profile'   element={<Profile/>}/>
-                <Route path='/otp'   element={<EnterOTP/>}/>
+               <Route path='/otp'   element={<EnterOTP/>}/>
+               <Route path='/reset/:token'   element={<UpdatePass/>}/>
              </Routes>
           </BrowserRouter>
       </div>
