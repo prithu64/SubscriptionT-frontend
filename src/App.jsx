@@ -31,7 +31,6 @@ function App() {
                <Route path='/forgotpassword' element={<ForgotPassword/>} />
                <Route path='/dashboard' element={<DashBoard/>}/>
                <Route path='/profile'   element={<Profile/>}/>
-               <Route path='/otp'   element={<EnterOTP/>}/>
                <Route path='/reset/:token'   element={<UpdatePass/>}/>
              </Routes>
           </BrowserRouter>
