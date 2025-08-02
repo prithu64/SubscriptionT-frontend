@@ -5,7 +5,7 @@ import DisplaySubsCard from "./DisplaySubCard";
 function DisplaySubs({subscriptions,refetch}) { 
 
   return (
-    <div className="px-4 max-w-5xl mx-auto py-10 space-y-3 dark:text-white text-black/30">
+    <div className="px-4 max-w-6xl mx-auto py-10 space-y-3 dark:text-white text-black/30">
   <div className="flex items-center justify-center space-x-2">
     
     <div className="text-black dark:text-white text-center border rounded-xl dark:border-white/60 w-[180px] p-2">
@@ -18,7 +18,7 @@ function DisplaySubs({subscriptions,refetch}) {
     subscriptions.length < 1 ? <div className="flex justify-center mt-15 items-center dark:text-white/60">are you poor ? </div>:""
   }
 
-  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <div className="flex flex-wrap gap-6 justify-center">
     {subscriptions.map((sub) => (
       <DisplaySubsCard
         id = {sub._id}
