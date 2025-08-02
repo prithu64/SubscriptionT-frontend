@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import FormSemiHeader from "../components/FormSemiHeader"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import UpdateModal from "../components/updateModal"
+import UpdateModal from "../components/UpdateModal"
 import { TbPasswordUser } from "react-icons/tb";
 import { MdDelete } from "react-icons/md";
 import { FaPenToSquare } from "react-icons/fa6";
